@@ -3,9 +3,9 @@ use std::str::FromStr;
 use std::time::{Duration, SystemTime};
 use rdkafka::Message;
 use tokio::time::Instant;
-use kafka::kafka_client::{KafkaClient, KafkaClientType};
-use kafka::kafka_utils::{get_message_headers, get_raw_payload, get_time_stamp};
-use crate::analyser::Analyser;
+use crate::kafka::kafka_client::{KafkaClient, KafkaClientType};
+use crate::kafka::kafka_utils::{get_message_headers, get_raw_payload, get_time_stamp};
+use crate::consumer::analyser::Analyser;
 
 #[derive(Debug)]
 pub struct TestMessage {

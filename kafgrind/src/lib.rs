@@ -1,12 +1,18 @@
 use std::collections::HashMap;
 
-pub mod args;
 
-pub fn generate_payload(size_in_bytes: u32) -> String {
-    let mut payload = HashMap::new();
-    let items = size_in_bytes * 1;
-    for key in 0..items {
-        payload.insert(key, key);
+
+pub mod args;
+pub mod kafka;
+pub mod producer;
+pub mod consumer;
+
+pub fn generate_payload(size_in_bytes: usize) -> String {
+    let mut payload = String::with_capacity(size_in_bytes);
+    let mut index = 0;
+    while index < payload.capacity() {
+        payload.push('a');
+        index = index + 1;
     }
-    serde_json::to_string(&payload).unwrap()
+    payload
 }

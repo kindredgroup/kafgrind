@@ -1,10 +1,10 @@
-extern crate core;
+
 
 use std::collections::HashMap;
-use kafka::kafka_client::{KafkaClient, KafkaClientType};
-use crate::analyser::Analyser;
-use crate::models::View;
-use crate::runner::Runner;
+use crate::kafka::kafka_client::{KafkaClient, KafkaClientType};
+use crate::consumer::analyser::Analyser;
+use crate::consumer::models::View;
+use crate::consumer::runner::Runner;
 
 pub mod runner;
 pub mod analyser;

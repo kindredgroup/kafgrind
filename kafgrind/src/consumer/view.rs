@@ -1,4 +1,4 @@
-use crate::models::{AnalyticalDataSet, View};
+use crate::consumer::models::{AnalyticalDataSet, View};
 use std::collections::HashMap;
 
 impl View {

@@ -1,4 +1,4 @@
-use crate::kafka_utils::build_kafka_headers;
+use crate::kafka::kafka_utils::build_kafka_headers;
 use rdkafka::consumer::{Consumer, RebalanceProtocol, StreamConsumer};
 use rdkafka::error::KafkaError;
 use rdkafka::message::{BorrowedMessage, Header, OwnedHeaders};
@@ -7,6 +7,7 @@ use rdkafka::types::RDKafkaErrorCode;
 use rdkafka::{ClientConfig, Offset, TopicPartitionList};
 use std::collections::HashMap;
 use std::time::Duration;
+
 
 pub struct KafkaClient {
     consumer: Option<StreamConsumer>,

@@ -1,26 +1,31 @@
+use serde::Deserialize;
 
-struct ProducerConfig {
-    rate: u32,
-    in_topic: String,
-    payload: serde_json::Value
+#[derive(Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct ProducerConfig {
+    pub rate: u32,
+    pub in_topic: String,
+    pub payload: serde_json::Value,
 }
 
-enum Operator {
-    EQUAL
+pub enum Operator {
+    EQUAL,
 }
 
-struct Condition {
-    operator: Operator,
-    in_path: String,
-    out_path: String
+pub struct Condition {
+    pub operator: Operator,
+    pub in_path: String,
+    pub out_path: String,
 }
 
-struct AnalyserConfig {
-    out_topic: String,
-    match_condition: Condition
+pub struct AnalyserConfig {
+    pub out_topic: String,
+    pub match_condition: Condition,
 }
 
-struct Config {
-    producer_config: ProducerConfig,
-    analyser_config: AnalyserConfig
+#[derive(Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct Config {
+    pub producer_config: ProducerConfig,
+    // analyser_config: AnalyserConfig
 }

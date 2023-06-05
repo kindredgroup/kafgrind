@@ -1,6 +1,6 @@
 use std::collections::{BTreeMap, HashMap};
-use crate::runner::TestMessage;
-use crate::models::{AnalyticalDataSet, View};
+use crate::consumer::runner::TestMessage;
+use crate::consumer::models::{AnalyticalDataSet, View};
 
 impl AnalyticalDataSet {
 

@@ -1,5 +1,5 @@
-use crate::models::Executor;
-use kafka::kafka_client::KafkaClient;
+use crate::producer::models::Executor;
+use crate::kafka::kafka_client::KafkaClient;
 use std::collections::HashMap;
 use std::time::SystemTime;
 

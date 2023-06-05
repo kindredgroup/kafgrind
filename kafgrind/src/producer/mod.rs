@@ -1,15 +1,11 @@
-pub(crate) mod base_executor;
-pub(crate) mod generator;
-mod models;
+pub mod base_executor;
+pub mod generator;
+pub mod models;
 
 use std::collections::HashMap;
-
-use std::time::{Duration};
-
-
-use crate::base_executor::BaseExecutor;
-use crate::generator::Generator;
-use kafka::kafka_client::{KafkaClient, KafkaClientType};
+use crate::kafka::kafka_client::{KafkaClient, KafkaClientType};
+use crate::producer::generator::Generator;
+use crate::producer::base_executor::BaseExecutor;
 
 pub fn run_base_producer_task(
     rate: u64,
